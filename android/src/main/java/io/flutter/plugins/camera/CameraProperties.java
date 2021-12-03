@@ -235,6 +235,8 @@ public interface CameraProperties {
    * @return int[] List of noise reduction modes that are supported by this camera device.
    */
   int[] getAvailableNoiseReductionModes();
+
+  StreamConfigurationMap getAvailableScalerStreamConfigurationMap();
 }
 
 /**
@@ -346,5 +348,10 @@ class CameraPropertiesImpl implements CameraProperties {
   public int[] getAvailableNoiseReductionModes() {
     return cameraCharacteristics.get(
         CameraCharacteristics.NOISE_REDUCTION_AVAILABLE_NOISE_REDUCTION_MODES);
+  }
+
+  @Override
+  public StreamConfigurationMap getAvailableScalerStreamConfigurationMap() {
+    return cameraCharacteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
   }
 }
