@@ -4,12 +4,17 @@
 
 package io.flutter.plugins.camera.features.resolution;
 
+
+
+
+import android.media.EncoderProfiles;
+import android.os.Build;
+import android.graphics.ImageFormat;
+import android.hardware.camera2.CameraCharacteristics;
+import android.media.CamcorderProfile;
 import android.annotation.TargetApi;
 import android.hardware.camera2.CaptureRequest;
 import android.hardware.camera2.params.StreamConfigurationMap;
-import android.media.CamcorderProfile;
-import android.media.EncoderProfiles;
-import android.os.Build;
 import android.util.Size;
 import androidx.annotation.VisibleForTesting;
 import io.flutter.plugins.camera.CameraProperties;
