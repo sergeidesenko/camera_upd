@@ -47,7 +47,7 @@ public class CameraFeatureFactoryImpl implements CameraFeatureFactory {
 
   @Override
   public FlashFeature createFlashFeature(@NonNull CameraProperties cameraProperties) {
-    return new FlashFeature(cameraProperties);createResolutionFeature
+    return new FlashFeature(cameraProperties);
   }
 
   @Override
