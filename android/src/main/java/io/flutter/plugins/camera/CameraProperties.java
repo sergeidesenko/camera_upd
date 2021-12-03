@@ -13,6 +13,7 @@ import android.util.Range;
 import android.util.Rational;
 import android.util.Size;
 import androidx.annotation.RequiresApi;
+import android.hardware.camera2.params.StreamConfigurationMap;
 
 /** An interface allowing access to the different characteristics of the device's camera. */
 public interface CameraProperties {
