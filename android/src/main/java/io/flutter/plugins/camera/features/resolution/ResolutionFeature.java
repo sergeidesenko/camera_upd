@@ -263,6 +263,14 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
     }
   }
 
+  private static class CompareSizesByArea implements Comparator<Size> {
+    @Override
+    public int compare(Size lhs, Size rhs) {
+      // We cast here to ensure the multiplications won't overflow.
+      return Long.signum((long) lhs.getWidth() * lhs.getHeight() - (long) rhs.getWidth() * rhs.getHeight());
+    }
+  }
+
   private void configureResolution(ResolutionPreset resolutionPreset, int cameraId)
       throws IndexOutOfBoundsException {
     if (!checkIsSupported()) {
