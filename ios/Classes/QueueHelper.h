@@ -3,7 +3,11 @@
 // found in the LICENSE file.
 
 #import <Foundation/Foundation.h>
-#import <camera/CameraPlugin.h>
 
-FOUNDATION_EXPORT double cameraVersionNumber;
-FOUNDATION_EXPORT const unsigned char cameraVersionString[];
+NS_ASSUME_NONNULL_BEGIN
+
+@interface QueueHelper : NSObject
++ (void)ensureToRunOnMainQueue:(void (^)(void))block;
+@end
+
+NS_ASSUME_NONNULL_END

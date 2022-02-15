@@ -21,9 +21,9 @@ class CameraPreview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return controller.value.isInitialized
-        ? ValueListenableBuilder(
+        ? ValueListenableBuilder<CameraValue>(
       valueListenable: controller,
-      builder: (context, value, child) {
+      builder: (BuildContext context, Object? value, Widget? child) {
         return _wrapInRotatedBox(child: controller.buildPreview());
       },
       child: child,
@@ -43,12 +43,14 @@ class CameraPreview extends StatelessWidget {
   }
 
   bool _isLandscape() {
-    return [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]
-        .contains(_getApplicableOrientation());
+    return <DeviceOrientation>[
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight
+    ].contains(_getApplicableOrientation());
   }
 
   int _getQuarterTurns() {
-    Map<DeviceOrientation, int> turns = {
+    final Map<DeviceOrientation, int> turns = <DeviceOrientation, int>{
       DeviceOrientation.portraitUp: 0,
       DeviceOrientation.landscapeRight: 1,
       DeviceOrientation.portraitDown: 2,
